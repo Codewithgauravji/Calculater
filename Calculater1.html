@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,tr,td{
+           
+            text-align: center;
+            border-collapse: collapse;
+            height: 80px;
+            width: 380px;
+            border-radius: 20px;
+            opacity: 0.2px;
+            
+        }
+       
+        table{
+            box-shadow: 0 10px 10px  rgba(2.7, 2.7, 2.7,2.7);
+
+        }
+       
+        button{
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            border: none;
+            background-color: gray;
+            color: whitesmoke;
+            font-size: x-large;
+            cursor: pointer;
+            border-top: 5px solid rgb(179, 17, 194);
+            border-right: 5px solid rgb(179, 17, 194);
+
+           
+           
+        }
+        button:hover{
+            background-color: chartreuse;
+            color: black;
+           
+        }
+        input{
+          height: 85px;
+          width: 380px;
+          border:none;
+          background-color:gray;
+          color: black;
+          text-align: right;
+          font-size: x-large;
+          border-radius: 15px;
+        }
+        .equal{
+            background-color: orangered;
+        }
+        .equal:hover{
+            background-color: springgreen;
+        }
+        /* td{
+            box-shadow: 0 10px 10px 10px rgba(144, 155, 111, 0.5) ;
+        } */
+       h1{
+        font-size: 4rem;
+        color: orangered;
+       } 
+       
+    </style>
+
+    <script>
+        function btnpress(x){
+            document.getElementById("t1").value+=x;
+        }
+        function cleardata(){
+            document.getElementById("t1").value="";
+        }
+        function backrow(){
+            var a=document.getElementById("t1").value;
+            var len=a.length;
+            var b=a.substr(0,len-1)
+            document.getElementById("t1").value=b
+        }
+        function Result(){
+            var a=document.getElementById("t1").value;
+            var b=eval(a);
+            document.getElementById("t1").value=b;
+        }
+    </script>
+</head>
+<body>
+    <center>
+    <h1>Calculater</h1>
+    <table  style="background-image: url(gif1.gif);background-size: cover;">
+        
+        <tr>
+            <td colspan="4">
+            <input type="text" id="t1" disabled >
+            </td>
+        </tr>
+        <tr>
+            <td><button onclick="cleardata()">AC</button></td>
+            <td><button onclick="btnpress('%')">%</button></td>
+            <td><button onclick="backrow()">&bkarow;</button></td>
+            <td><button onclick="backpress('/')">/</button></td>
+           
+        </tr>
+        <tr>
+            <td><button onclick="btnpress('9')">9</button></td>
+            <td><button onclick="btnpress('8')">8</button></td>
+            <td><button onclick="btnpress('7')">7</button></td>
+            <td><button onclick="btnpress('+')">+</button></td>
+           
+        </tr>
+        <tr>
+            <td><button onclick="btnpress('6')">6</button></td>
+            <td><button onclick="btnpress('5')">5</button></td>
+            <td><button onclick="btnpress('4')">4</button></td>
+            <td><button onclick="btnpress('-')">-</button></td>
+           
+        </tr>
+        <tr>
+            <td><button onclick="btnpress('3')">3</button></td>
+            <td><button onclick="btnpress('2')">2</button></td>
+            <td><button onclick="btnpress('1')">1</button></td>
+            <td><button onclick="btnpress('*')">*</button></td>
+           
+        </tr>
+        <tr>
+            <td><button onclick="btnpress('00')">00</button></td>
+            <td><button onclick="btnpress('0')">0</button></td>
+            <td><button onclick="btnpress('.')">.</button></td>
+            <td><button class="equal" onclick="Result()">=</button></td>
+           
+        </tr>
+    </table>
+</center>
+</body>
+</html>
